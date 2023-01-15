@@ -22,7 +22,7 @@ class CreateRole extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['guard_name'] = 'filament';
+        $data['guard_name'] = 'admin_v2';
 
         return $data;
     }

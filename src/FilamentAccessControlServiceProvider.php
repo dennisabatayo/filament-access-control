@@ -71,9 +71,9 @@ class FilamentAccessControlServiceProvider extends PluginServiceProvider
     protected function mergeGuardsConfig(): void
     {
         $this->mergeConfig([
-            'filament' => [
+            'admin_v2' => [
                 'driver' => 'session',
-                'provider' => 'filament_users',
+                'provider' => 'admin_v2_users',
             ],
         ], 'auth.guards');
     }
@@ -84,7 +84,7 @@ class FilamentAccessControlServiceProvider extends PluginServiceProvider
     protected function mergeProvidersConfig(): void
     {
         $this->mergeConfig([
-            'filament_users' => [
+            'admin_v2_users' => [
                 'driver' => 'eloquent',
                 'model' => FilamentUser::class,
             ],
@@ -97,10 +97,10 @@ class FilamentAccessControlServiceProvider extends PluginServiceProvider
     protected function mergePasswordsConfig(): void
     {
         $this->mergeConfig([
-            'filament' => [
-                'provider' => 'filament_users',
+            'admin_v2' => [
+                'provider' => 'admin_v2_users',
                 'email' => 'auth.emails.password',
-                'table' => 'filament_password_resets',
+                'table' => 'password_resets',
                 'expire' => 60,
             ],
         ], 'auth.passwords');

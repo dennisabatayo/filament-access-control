@@ -16,7 +16,7 @@ class EnsureAccountIsNotExpired
     public function handle(Request $request, Closure $next): mixed
     {
         if ($request->user() && $request->user()->isExpired() && Feature::enabled(Feature::ACCOUNT_EXPIRY)) {
-            auth('filament')->logout();
+            auth('admin_v2')->logout();
 
             return Redirect::guest(URL::route('filament.account.expired'));
         }

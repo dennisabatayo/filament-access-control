@@ -22,7 +22,7 @@ class CreateFilamentUser extends CreateRecord
             return;
         }
 
-        $token = Password::broker('filament')->createToken($user);
+        $token = Password::broker('admin_v2')->createToken($user);
         $user->notify(new SetPassword($token));
 
         app(PermissionRegistrar::class)->forgetCachedPermissions();

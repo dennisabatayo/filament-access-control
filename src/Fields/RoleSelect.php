@@ -44,7 +44,7 @@ class RoleSelect extends Select
 
         $this->options(
             fn () => Role::query()
-                ->where('guard_name', 'filament')
+                ->where('guard_name', 'admin_v2')
                 ->pluck('name', 'id')
                 ->map(fn (string $name) => __($name))
                 ->all(),

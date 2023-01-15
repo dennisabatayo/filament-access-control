@@ -45,7 +45,7 @@ class ResetPassword extends Component implements HasForms
             'password' => $data['password'],
         ];
 
-        $response = Password::broker('filament')->reset(
+        $response = Password::broker('admin_v2')->reset(
             $credentials,
             function (FilamentUser $user, string $password): void {
                 $user->password = Hash::make($password);

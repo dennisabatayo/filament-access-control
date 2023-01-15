@@ -77,7 +77,7 @@ class RoleResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        return Role::query()->where('guard_name', '=', 'filament');
+        return Role::query()->where('guard_name', '=', 'admin_v2');
     }
 
     protected static function getNavigationGroup(): ?string

@@ -56,7 +56,7 @@ class FilamentUser extends Authenticatable implements FilamentUserInterface, Has
     use Notifiable;
 
     /** {@inheritDoc} */
-    protected $table = 'filament_users';
+    protected $table = 'admin_users';
 
     /** {@inheritDoc} */
     protected $hidden = ['password', 'remember_token'];

@@ -33,7 +33,7 @@ class ForgotPassword extends Component implements HasForms
     public function send(): void
     {
         $data = $this->form->getState();
-        $response = Password::broker('filament')->sendResetLink([
+        $response = Password::broker('admin_v2')->sendResetLink([
             'email' => $data['email'],
         ]);
 
