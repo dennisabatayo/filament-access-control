@@ -1,5 +1,3 @@
 {
-    "super-admin": "Super Admin",
-    "admin-users.update": "Admin Users → Edit",
-    "permissions.update": "Permissions → Edit"
+    "super-admin": "Super Admin"
 }
