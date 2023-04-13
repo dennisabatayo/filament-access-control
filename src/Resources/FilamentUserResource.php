@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Chiiya\FilamentAccessControl\Resources;
 
@@ -29,6 +31,7 @@ class FilamentUserResource extends Resource
 {
     protected static ?string $model = FilamentUser::class;
     protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
@@ -82,7 +85,7 @@ class FilamentUserResource extends Resource
                     ? [
                         BooleanColumn::make('active')
                             ->label(__('filament-access-control::default.fields.active'))
-                            ->getStateUsing(fn (FilamentUser $record) => ! $record->isExpired()),
+                            ->getStateUsing(fn (FilamentUser $record) => !$record->isExpired()),
                     ]
                     : []
                 ),
